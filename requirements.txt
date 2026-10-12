@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic[email]
+PyJWT
+passlib
+bcrypt
+pypdf
+joblib
+scikit-learn

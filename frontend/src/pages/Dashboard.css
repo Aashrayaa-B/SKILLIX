@@ -1,0 +1,1451 @@
+/* =========================================================
+   SKILLIX DASHBOARD
+========================================================= */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #f8f7fc;
+  color: #11111a;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.dashboard-nav {
+  height: 82px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e8e6ef;
+}
+
+.dashboard-logo {
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #11111a;
+  letter-spacing: -1.5px;
+}
+
+.dashboard-logo span {
+  color: #7050ff;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-user button {
+  border: none;
+  background: #11111a;
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 10px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.dashboard-user button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.dashboard-main {
+  width: 86%;
+  max-width: 1350px;
+  margin: auto;
+
+  padding: 70px 0 120px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.dashboard-hero {
+  min-height: 520px;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+
+  align-items: center;
+
+  column-gap: 30px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 10;
+  max-width: 680px;
+}
+
+.dashboard-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  border: 1px solid #ddd7ff;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: #7050ff;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.label-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: #7050ff;
+
+  box-shadow: 0 0 0 5px #eeeaff;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero-copy h1 {
+  margin: 30px 0 25px;
+
+  font-size: clamp(52px, 6vw, 82px);
+  line-height: 0.96;
+
+  letter-spacing: -4.5px;
+  font-weight: 800;
+}
+
+.hero-copy h1 span {
+  color: #7050ff;
+}
+
+.hero-copy p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #777583;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO CONSTELLATION
+   Fixed 520x520 coordinate system.
+   The complete SVG scales as one object on smaller screens.
+========================================================= */
+
+.dashboard-orbit {
+  position: relative;
+
+  width: 520px;
+  height: 520px;
+
+  margin: 0 auto;
+
+  flex-shrink: 0;
+
+  overflow: visible;
+}
+
+.dashboard-constellation {
+  display: block;
+
+  width: 520px;
+  height: 520px;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+/* subtle SVG depth */
+
+.dashboard-constellation circle,
+.dashboard-constellation path,
+.dashboard-constellation rect,
+.dashboard-constellation text {
+  vector-effect: non-scaling-stroke;
+}
+
+/* constellation nodes */
+
+.constellation-node circle {
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.dashboard-hero:hover .constellation-node circle {
+  filter: drop-shadow(0 0 5px rgba(112, 80, 255, 0.16));
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.dashboard-status {
+  margin-top: 20px;
+
+  padding: 28px 42px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background: #ffffff;
+
+  border: 1px solid #e5e2ed;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 15px 40px rgba(40, 30, 80, 0.04);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 0 28px;
+
+  border-right: 1px solid #ebe8f1;
+}
+
+.status-item:last-child {
+  border-right: none;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #eeeaff;
+
+  color: #7050ff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.status-item:nth-child(2) .status-icon {
+  background: #11111a;
+  color: #ffffff;
+}
+
+.status-title {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.status-subtitle {
+  margin-top: 4px;
+
+  color: #9996a4;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EXPLORE
+========================================================= */
+
+.explore-section {
+  margin-top: 100px;
+}
+
+.explore-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 35px;
+}
+
+.explore-kicker {
+  color: #7050ff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.explore-heading h2 {
+  margin: 10px 0 0;
+
+  font-size: 38px;
+
+  letter-spacing: -2px;
+}
+
+.explore-heading p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #9693a0;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.dashboard-card {
+  position: relative;
+
+  min-height: 610px;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e0eb;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #d8d0ff;
+
+  box-shadow:
+    0 25px 60px rgba(30, 20, 70, 0.08);
+}
+
+.card-number {
+  position: relative;
+  z-index: 5;
+
+  color: #7050ff;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD VISUALS
+========================================================= */
+
+.card-visual {
+  position: relative;
+
+  height: 230px;
+
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   DISCOVER VISUAL
+========================================================= */
+
+.discover-visual {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(112, 80, 255, 0.12),
+      transparent 63%
+    );
+}
+
+.discover-ring {
+  position: absolute;
+
+  border: 1px solid #ded7ff;
+
+  border-radius: 50%;
+}
+
+.discover-ring-one {
+  width: 150px;
+  height: 150px;
+}
+
+.discover-ring-two {
+  width: 105px;
+  height: 105px;
+}
+
+.discover-core {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 1px solid #dcd5ff;
+
+  box-shadow:
+    0 0 0 8px #eeeaff,
+    0 12px 30px rgba(112, 80, 255, 0.15);
+
+  z-index: 3;
+}
+
+.discover-line {
+  position: absolute;
+
+  width: 145px;
+  height: 1px;
+
+  background: #ddd7ff;
+
+  transform-origin: center;
+}
+
+.discover-line-one {
+  transform: rotate(34deg);
+}
+
+.discover-line-two {
+  transform: rotate(-34deg);
+}
+
+.discover-dot {
+  position: absolute;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #7050ff;
+
+  box-shadow:
+    0 0 0 6px #eeeaff,
+    0 0 25px rgba(112, 80, 255, 0.28);
+
+  z-index: 4;
+}
+
+.discover-dot-one {
+  top: 55px;
+  left: 27%;
+}
+
+.discover-dot-two {
+  top: 132px;
+  right: 27%;
+}
+
+.discover-dot-three {
+  bottom: 38px;
+  left: 48%;
+}
+
+
+/* =========================================================
+   RESUME VISUAL
+========================================================= */
+
+.resume-visual {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(112, 80, 255, 0.10),
+      transparent 65%
+    );
+}
+
+.resume-document {
+  position: relative;
+
+  width: 142px;
+  height: 178px;
+
+  padding: 23px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfdbe8;
+
+  border-radius: 12px;
+
+  transform: rotate(-4deg);
+
+  box-shadow:
+    0 20px 45px rgba(40, 30, 80, 0.11);
+}
+
+.resume-document::before {
+  content: "";
+
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  right: -12px;
+  top: -12px;
+
+  border-radius: 50%;
+
+  background: #f0edff;
+
+  box-shadow:
+    0 8px 20px rgba(112, 80, 255, 0.12);
+}
+
+.resume-header-line {
+  width: 70%;
+  height: 7px;
+
+  margin-bottom: 13px;
+
+  border-radius: 10px;
+
+  background: #7050ff;
+}
+
+.resume-text-line {
+  height: 6px;
+
+  margin-bottom: 11px;
+
+  border-radius: 10px;
+
+  background: #e6e2ed;
+}
+
+.resume-text-line.long {
+  width: 88%;
+}
+
+.resume-text-line.medium {
+  width: 70%;
+}
+
+.resume-chart {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  height: 40px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.resume-chart span {
+  width: 9px;
+
+  border-radius: 3px 3px 0 0;
+
+  background: #7050ff;
+}
+
+.resume-chart span:nth-child(1) {
+  height: 45%;
+}
+
+.resume-chart span:nth-child(2) {
+  height: 70%;
+}
+
+.resume-chart span:nth-child(3) {
+  height: 55%;
+}
+
+.resume-chart span:nth-child(4) {
+  height: 90%;
+}
+
+.resume-check {
+  position: absolute;
+
+  right: 25%;
+  bottom: 28px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #7050ff;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 900;
+
+  border: 5px solid #ffffff;
+
+  box-shadow:
+    0 12px 30px rgba(112, 80, 255, 0.30);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   JOB FIT VISUAL
+========================================================= */
+
+.job-visual {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(112, 80, 255, 0.10),
+      transparent 65%
+    );
+}
+
+.job-circle {
+  width: 125px;
+  height: 125px;
+
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 13px solid #eeeaff;
+
+  border-top-color: #7050ff;
+  border-right-color: #7050ff;
+
+  color: #7050ff;
+
+  font-size: 28px;
+  font-weight: 900;
+
+  box-shadow:
+    0 20px 45px rgba(112, 80, 255, 0.13);
+}
+
+.job-circle::before {
+  content: "";
+
+  position: absolute;
+
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  border: 1px solid #e8e3ff;
+}
+
+.job-circle::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  top: 2px;
+  right: 16px;
+
+  border-radius: 50%;
+
+  background: #7050ff;
+
+  box-shadow:
+    0 0 0 5px #eeeaff;
+}
+
+.job-bar {
+  position: absolute;
+
+  height: 8px;
+
+  border-radius: 20px;
+
+  background: #e5e1ec;
+
+  box-shadow:
+    0 4px 12px rgba(30, 20, 70, 0.04);
+}
+
+.bar-one {
+  width: 100px;
+  top: 67px;
+  right: 14%;
+}
+
+.bar-two {
+  width: 72px;
+  top: 92px;
+  right: 18%;
+}
+
+.bar-three {
+  width: 48px;
+  top: 117px;
+  right: 23%;
+}
+
+.bar-one::before,
+.bar-two::before,
+.bar-three::before {
+  content: "";
+
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #7050ff;
+}
+
+.bar-one::before {
+  width: 65%;
+}
+
+.bar-two::before {
+  width: 80%;
+}
+
+.bar-three::before {
+  width: 55%;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content {
+  margin-top: auto;
+
+  position: relative;
+  z-index: 5;
+}
+
+.card-kicker {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #aaa7b3;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.card-content h2 {
+  margin: 0 0 20px;
+
+  font-size: 38px;
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+}
+
+.card-content p {
+  max-width: 330px;
+
+  margin: 0 0 28px;
+
+  color: #777583;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.card-content button {
+  border: none;
+
+  background: none;
+
+  padding: 0;
+
+  color: #11111a;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.card-content button span {
+  margin-left: 10px;
+
+  color: #7050ff;
+
+  font-size: 20px;
+
+  transition: margin-left 0.2s ease;
+}
+
+.card-content button:hover span {
+  margin-left: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .dashboard-hero {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .dashboard-orbit {
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    min-height: 560px;
+  }
+
+  .dashboard-status {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .status-item {
+    padding: 10px 0;
+
+    border-right: none;
+    border-bottom: 1px solid #ebe8f1;
+  }
+
+  .status-item:last-child {
+    border-bottom: none;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .dashboard-nav {
+    padding: 0 5%;
+  }
+
+  .dashboard-user span {
+    display: none;
+  }
+
+  .dashboard-main {
+    width: 90%;
+    padding-top: 50px;
+  }
+
+  .hero-copy h1 {
+    font-size: 50px;
+    letter-spacing: -3px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+  }
+
+  /*
+    CONSTELLATION ONLY
+
+    Keep the exact same 520x520 coordinate system.
+    The complete constellation scales as ONE object.
+    Nothing inside it is independently resized.
+  */
+
+  .dashboard-orbit {
+    width: 520px;
+    height: 520px;
+
+    transform: scale(0.78);
+    transform-origin: top center;
+
+    margin-bottom: -80px;
+  }
+
+  .dashboard-constellation {
+    width: 520px;
+    height: 520px;
+  }
+
+  .explore-heading {
+    display: block;
+  }
+
+  .explore-heading p {
+    margin-top: 15px;
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   SKILLIX — FINAL CARD VISUAL SYSTEM
+   ONLY affects the three dashboard card illustrations.
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   BASE
+--------------------------------------------------------- */
+
+.card-visual {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   01 — DISCOVER MY ROLE
+   "Career Path Map"
+========================================================= */
+
+.discover-visual {
+  position: relative;
+}
+
+
+/* soft field */
+
+.discover-visual::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(111, 76, 255, 0.10) 0%,
+      rgba(111, 76, 255, 0.035) 42%,
+      rgba(111, 76, 255, 0) 72%
+    );
+}
+
+
+/* outer career map */
+
+.discover-visual::after {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border: 1px solid rgba(111, 76, 255, 0.15);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 25px rgba(111, 76, 255, 0.035);
+}
+
+
+/* central starting point */
+
+.discover-visual .visual-circle {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(111, 76, 255, 0.20);
+  box-shadow:
+    0 0 0 8px rgba(111, 76, 255, 0.045),
+    0 10px 30px rgba(111, 76, 255, 0.13);
+  z-index: 5;
+}
+
+.discover-visual .visual-circle::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #6f4cff;
+  box-shadow: 0 0 14px rgba(111, 76, 255, 0.35);
+}
+
+
+/* career branches */
+
+.discover-visual .visual-line {
+  position: absolute;
+  width: 78px;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(111, 76, 255, 0.42),
+    rgba(111, 76, 255, 0.08)
+  );
+  z-index: 2;
+}
+
+.discover-visual .line-one {
+  transform: translate(0, -1px) rotate(-38deg);
+}
+
+.discover-visual .line-two {
+  transform: translate(0, -1px) rotate(38deg);
+}
+
+
+/* path nodes */
+
+.discover-visual .visual-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6f4cff;
+  box-shadow:
+    0 0 0 5px rgba(111, 76, 255, 0.07),
+    0 5px 14px rgba(111, 76, 255, 0.17);
+  z-index: 6;
+}
+
+.discover-visual .dot-one {
+  transform: translate(-67px, -47px);
+}
+
+.discover-visual .dot-two {
+  transform: translate(67px, -47px);
+}
+
+.discover-visual .dot-three {
+  transform: translate(0, 72px);
+}
+
+
+/* extra visual path detail */
+
+.discover-visual .visual-dot::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #6f4cff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   02 — ANALYZE MY RESUME
+   "Resume Intelligence"
+========================================================= */
+
+.resume-visual {
+  position: relative;
+}
+
+
+/* analysis glow */
+
+.resume-visual::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(111, 76, 255, 0.10),
+    rgba(111, 76, 255, 0) 70%
+  );
+}
+
+
+/* floating skill signal */
+
+.resume-visual::after {
+  content: "SKILLS";
+  position: absolute;
+  right: calc(50% - 102px);
+  top: 58px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid rgba(111, 76, 255, 0.13);
+  color: #6f4cff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 22px rgba(111, 76, 255, 0.10);
+  z-index: 4;
+}
+
+
+/* resume sheet */
+
+.resume-visual .resume-sheet {
+  position: relative;
+  width: 120px;
+  height: 158px;
+  padding: 18px;
+  border-radius: 13px;
+  background: #ffffff;
+  border: 1px solid rgba(111, 76, 255, 0.14);
+  box-shadow:
+    0 18px 38px rgba(111, 76, 255, 0.12),
+    0 4px 12px rgba(20, 20, 40, 0.04);
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+
+
+/* resume header */
+
+.resume-visual .resume-sheet::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 55px;
+  height: 6px;
+  border-radius: 10px;
+  background: #6f4cff;
+}
+
+
+/* document corner */
+
+.resume-visual .resume-sheet::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 27px;
+  height: 27px;
+  border-radius: 0 13px 0 12px;
+  background: #f1edff;
+}
+
+
+/* document content */
+
+.resume-visual .resume-sheet > div {
+  height: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #e8e5ef;
+}
+
+.resume-visual .resume-sheet > div:nth-child(1) {
+  width: 82%;
+  margin-top: 40px;
+}
+
+.resume-visual .resume-sheet > div:nth-child(2) {
+  width: 67%;
+}
+
+.resume-visual .resume-sheet > div:nth-child(3) {
+  width: 88%;
+}
+
+.resume-visual .resume-sheet > div:nth-child(4) {
+  width: 56%;
+  margin-top: 17px;
+}
+
+.resume-visual .resume-sheet > div:nth-child(5) {
+  width: 73%;
+}
+
+
+/* detected-skill bars */
+
+.resume-visual .resume-sheet > div:nth-child(4)::after {
+  content: "";
+}
+
+
+/* analysis badge */
+
+.resume-visual .resume-check {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: calc(50% - 88px);
+  bottom: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6f4cff;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+  border: 5px solid #ffffff;
+  box-shadow:
+    0 10px 26px rgba(111, 76, 255, 0.27),
+    0 0 0 7px rgba(111, 76, 255, 0.055);
+  z-index: 6;
+}
+
+
+/* =========================================================
+   03 — CHECK MY JOB FIT
+   "Resume ↔ Opportunity"
+========================================================= */
+
+.job-visual {
+  position: relative;
+}
+
+
+/* central comparison glow */
+
+.job-visual::before {
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(111, 76, 255, 0.105),
+    rgba(111, 76, 255, 0) 70%
+  );
+}
+
+
+/* left card label */
+
+.job-visual::after {
+  content: "YOUR RESUME";
+  position: absolute;
+  left: calc(50% - 102px);
+  top: 69px;
+  transform: translateX(-50%);
+  color: #8b8797;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  z-index: 4;
+}
+
+
+/* comparison documents */
+
+.job-visual .job-circle::before {
+  content: "JOB";
+  position: absolute;
+  left: 88px;
+  top: -4px;
+  width: 66px;
+  height: 27px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(111, 76, 255, 0.12);
+  color: #8b8797;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 7px 18px rgba(111, 76, 255, 0.08);
+}
+
+
+/* document blocks */
+
+.job-visual .job-bar {
+  position: absolute;
+  height: 5px;
+  border-radius: 10px;
+  background: #e7e4ef;
+  z-index: 2;
+}
+
+.job-visual .bar-one {
+  width: 55px;
+  transform: translate(-91px, 15px);
+}
+
+.job-visual .bar-two {
+  width: 43px;
+  transform: translate(-91px, 30px);
+}
+
+.job-visual .bar-three {
+  width: 52px;
+  transform: translate(91px, 15px);
+}
+
+
+/* central match */
+
+.job-visual .job-circle {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 7px solid #6f4cff;
+  box-shadow:
+    0 0 0 9px rgba(111, 76, 255, 0.055),
+    0 12px 30px rgba(111, 76, 255, 0.18);
+  z-index: 7;
+}
+
+
+/* check */
+
+.job-visual .job-circle span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6f4cff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+/* connector lines */
+
+.job-visual .job-circle::after {
+  content: "";
+  position: absolute;
+  left: -65px;
+  width: 130px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(111, 76, 255, 0),
+    rgba(111, 76, 255, 0.20),
+    rgba(111, 76, 255, 0)
+  );
+  z-index: -1;
+}
+
+
+/* =========================================================
+   MICRO INTERACTION
+========================================================= */
+
+.dashboard-card:hover .discover-visual .visual-dot {
+  box-shadow:
+    0 0 0 6px rgba(111, 76, 255, 0.10),
+    0 6px 16px rgba(111, 76, 255, 0.22);
+}
+
+.dashboard-card:hover .resume-visual .resume-sheet {
+  transform: rotate(-3deg) translateY(-3px);
+}
+
+.dashboard-card:hover .job-visual .job-circle {
+  box-shadow:
+    0 0 0 10px rgba(111, 76, 255, 0.07),
+    0 14px 34px rgba(111, 76, 255, 0.22);
+}

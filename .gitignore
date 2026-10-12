@@ -1,0 +1,74 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node dependencies and builds
+node_modules/
+**/node_modules/
+frontend/dist/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+resume.pdf
+
+# Personal and local files
+*.pdf
+*.sqlite3-journal
+
+# Python test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor files
+.vscode/
+.idea/
+
+# Intermediate datasets and experiments
+*.csv
+analyze_*.py
+baseline*.py
+check_v3.py
+clean-data.py
+detect_*.py
+fix_concatenation.py
+inspect_*.py
+prepare_ml_dataset.py
+quality_check.py
+train_recommender.py
+career_recommender_v*_backup.py
+career_recommender_v*_test.py
+
+# Experimental career-model scripts
+build_career_profiles.py
+career_distinctive_skills.py
+career_profiles.py
+career_profiles_final.py
+career_profiles_weighted.py
+career_recommender.py
+career_recommender_v*.py
+jd_extractor.py
+model.py
+normalize_skills.py
+resume_career_recommender.py
+resume_extractor.py
+resume_jd_matcher*.py
+resume_skill_extractor.py
+scraper.py
+skill_analysis.txt
+skill_vocabulary*.py
+user_profile.py!**/.env.example
