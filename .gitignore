@@ -72,3 +72,6 @@ scraper.py
 skill_analysis.txt
 skill_vocabulary*.py
 user_profile.py!**/.env.example
+user_profile.py
+
+!backend/.env.example
